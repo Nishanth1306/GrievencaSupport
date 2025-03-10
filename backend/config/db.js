@@ -8,10 +8,10 @@ const sequelize = new Sequelize(process.env.DB_URL, {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false, // ✅ Required for Railway
+      rejectUnauthorized: false, 
     },
   },
-  logging: false, // Disable query logging
+  logging: false, 
 });
 
 sequelize.authenticate()

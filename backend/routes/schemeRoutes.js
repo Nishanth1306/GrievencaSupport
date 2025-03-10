@@ -1,5 +1,6 @@
 import express from "express";
 import Scheme from "../models/schemeModel.js";
+import { authenticateJWT } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.get("/", async (req, res) => {
 });
 
 // 📌 Add a new scheme
-router.post("/", async (req, res) => {
+router.post("/", authenticateJWT, async (req, res) => {
   const { name, description, eligibility, benefits, link } = req.body;
   const newScheme = await Scheme.create({ name, description, eligibility, benefits, link });
   res.status(201).json(newScheme);

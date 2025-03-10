@@ -2,10 +2,11 @@ import express from "express";
 import User from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+// import { authenticateJWT } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// 📌 Register User
+
 router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -16,7 +17,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// 📌 Login User
+
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
