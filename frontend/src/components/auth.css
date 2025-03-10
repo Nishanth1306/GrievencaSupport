@@ -1,0 +1,65 @@
+/* Center the form */
+.auth-container {
+  max-width: 350px;
+  margin: 80px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Form title */
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+/* Style inputs */
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-container input:focus {
+  border-color: #007bff;
+}
+
+/* Submit button */
+.auth-container button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.auth-container button:hover {
+  background: #0056b3;
+}
+
+/* Error messages */
+.auth-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .auth-container {
+    width: 90%;
+    padding: 20px;
+  }
+}

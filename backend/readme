@@ -1,0 +1,2 @@
+
+npm install express pg pg-hstore sequelize dotenv bcryptjs jsonwebtoken cors body-parser nodemon
