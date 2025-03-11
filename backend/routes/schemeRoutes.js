@@ -4,13 +4,13 @@ import { authenticateJWT } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// 📌 Get all schemes
+//To Get all schemes
 router.get("/", async (req, res) => {
   const schemes = await Scheme.findAll();
   res.json(schemes);
 });
 
-// 📌 Add a new scheme
+// Adding a new scheme
 router.post("/", authenticateJWT, async (req, res) => {
   const { name, description, eligibility, benefits, link } = req.body;
   const newScheme = await Scheme.create({ name, description, eligibility, benefits, link });
