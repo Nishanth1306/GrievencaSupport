@@ -6,6 +6,7 @@ import Register from "../src/components/Register";
 import SchemeList from "../src/components/SchemeList";
 import Navbar from "../src/components/Navbar";
 import Home from "../src/components/Home";
+import CategoryPage from "./components/CategoryPage";
 
 const App = () => {
   const [token, setToken] = useState(null);
@@ -43,9 +44,11 @@ const AppContent = ({ token, setToken }) => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/schemelist" element={token ? <SchemeList /> : <Navigate to="/login" />} />
-        <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/schemelist" />} />
+        <Route path="/schemes/:categoryName" element={token ? <SchemeList /> : <Navigate to="/login" />} />
+      
+        <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/category" />} />
         <Route path="/register" element={!token ? <Register /> : <Navigate to="/register" />} />
+        <Route path="/category" element={<CategoryPage/>}/>
       </Routes>
     </>
   );

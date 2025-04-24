@@ -42,7 +42,7 @@ app.use((err, req, res, next) => {
 });
 
 
-sequelize.sync()
+sequelize.sync({ alter: true})
   .then(() => console.log("✅ Database Synced"))
   .catch(err => console.error("❌ Database Sync Error:", err));
 

@@ -7,9 +7,10 @@ const Scheme = sequelize.define("Scheme", {
   eligibility: { type: DataTypes.TEXT, allowNull: false },
   benefits: { type: DataTypes.TEXT, allowNull: false },
   link: { type: DataTypes.STRING, allowNull: false },
+  category: DataTypes.STRING,
 });
 
-// 🚀 Sequelize Hook to Insert Default Data
+
 Scheme.afterSync(async () => {
   const count = await Scheme.count();
   if (count === 0) {
@@ -20,6 +21,7 @@ Scheme.afterSync(async () => {
         eligibility: "Indian citizens aged 18-40 years.",
         benefits: "Pension of ₹1,000 - ₹5,000 per month.",
         link: "https://npscra.nsdl.co.in/scheme-details.php",
+        category: "Pension",
       },
       {
         name: "Ayushman Bharat Yojana (PM-JAY)",
@@ -27,8 +29,18 @@ Scheme.afterSync(async () => {
         eligibility: "Families identified under SECC 2011 data.",
         benefits: "Health coverage of ₹5 lakh per family per year.",
         link: "https://pmjay.gov.in/",
+        category: "Health",
+      },
+      {
+        name:"cHECK",
+        description:"test",
+        eligibility:"skj",
+        benefits:"nbskjdsv",
+        link:"jvndsd",
+        category:"Education",
       },
     ]);
+    
     console.log("✅ Default schemes added via Sequelize Hook!");
   }
 });

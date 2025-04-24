@@ -17,7 +17,7 @@ const Login = ({ setToken }) => {
       // alert(res.data.message);
       Cookies.set("token", res.data.token, { expires: 1 }); 
       setToken(res.data.token);
-      navigate("/schemelist");  
+      navigate("/category");  
     } catch (error) {
       alert("❌ Invalid login credentials");
     }
